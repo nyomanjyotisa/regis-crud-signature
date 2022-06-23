@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Registration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Image;
 
 class RegistrationController extends Controller
 {
@@ -60,6 +61,14 @@ class RegistrationController extends Controller
                 'signature_path' => ['required'],
             ]
         );
+
+        $file = base64_decode($data['signature_path']);
+        $safeName = time().'.'.'PNG';
+        file_put_contents(public_path().'signatures/'.$safeName, $safeName);
+
+        Image::make(file_get_contents($data['signature_path']))->save($path); 
+
+        $data['signature_path'] = $safeName;
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();

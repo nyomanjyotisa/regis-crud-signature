@@ -31,7 +31,7 @@ class CreateRegistrationsTable extends Migration
             $table->string('city');
             $table->string('email');
             $table->text('remark')->nullable();
-            $table->text('signature_path')->nullable();
+            $table->text('signature_path', "65535")->nullable();
             $table->timestamps();
         });
     }

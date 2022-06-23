@@ -115,7 +115,7 @@
                     <div class="form-group row mb-4">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Signature*</label>
                       <div class="col-sm-12 col-md-7">
-                        <img src="{{$data->signature_path}}" alt="" width="500" height="333">
+                        <img src="/signatures/{{$data->signature_path}}" alt="" width="500" height="333">
                       </div>
                     </div>
                   </div>
