@@ -45,7 +45,7 @@
                             {{$data->room_no}}
                           </td>
                           <td>
-                            {{$data->room_type}}
+                            {{$data->last_name}}
                           </td>
                           <td>
                             {{$data->arrival}}
