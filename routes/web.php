@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [RegistrationController::class, 'index']);
+Route::get('/new', [RegistrationController::class, 'create']);
+Route::post('/new', [RegistrationController::class, 'store']);
+Route::get('/{id}', [RegistrationController::class, 'show']);
+Route::get('/{id}/edit', [RegistrationController::class, 'edit']);
+Route::post('/{id}/edit', [RegistrationController::class, 'update']);
+Route::get('/{id}/delete', [RegistrationController::class, 'destroy']);
