@@ -15,8 +15,8 @@ class RegistrationController extends Controller
      */
     public function index()
     {
-        // $datas = Registration::paginate(10);
-        $datas = Registration::all();
+        // $datas = Registration::simplePaginate(10);
+        $datas = Registration::all()->reverse();
         return view('index', compact('datas'));
     }
 
