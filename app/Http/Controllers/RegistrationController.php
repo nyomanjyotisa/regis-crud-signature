@@ -62,11 +62,11 @@ class RegistrationController extends Controller
             ]
         );
 
+        $data['signature_path'] = str_replace('data:image/png;base64,', '', $data['signature_path']);
+        $data['signature_path'] = str_replace(' ', '+', $data['signature_path']);
         $file = base64_decode($data['signature_path']);
         $safeName = time().'.'.'PNG';
-        file_put_contents(public_path().'signatures/'.$safeName, $safeName);
-
-        Image::make(file_get_contents($data['signature_path']))->save($path); 
+        file_put_contents(public_path().'/signatures/'.$safeName, $file);
 
         $data['signature_path'] = $safeName;
 
@@ -133,6 +133,14 @@ class RegistrationController extends Controller
                 'signature_path' => ['required'],
             ]
         );
+
+        $data['signature_path'] = str_replace('data:image/png;base64,', '', $data['signature_path']);
+        $data['signature_path'] = str_replace(' ', '+', $data['signature_path']);
+        $file = base64_decode($data['signature_path']);
+        $safeName = time().'.'.'PNG';
+        file_put_contents(public_path().'/signatures/'.$safeName, $file);
+
+        $data['signature_path'] = $safeName;
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();

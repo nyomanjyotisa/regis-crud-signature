@@ -48,10 +48,10 @@
                             {{$data->last_name}}
                           </td>
                           <td>
-                            {{$data->arrival}}
+                            {{date("F jS, Y", strtotime($data->arrival))}}
                           </td>
                           <td>
-                            {{$data->departure}}
+                            {{date("F jS, Y", strtotime($data->departure))}}
                           </td>
                           <td>
                             <a href="/{{$data->id}}" class="btn btn-info btn-action">
