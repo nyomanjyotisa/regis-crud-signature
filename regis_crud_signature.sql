@@ -43,16 +43,16 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `migrations` */
 
 insert  into `migrations`(`id`,`migration`,`batch`) values 
-(45,'2014_10_12_000000_create_users_table',1),
-(46,'2014_10_12_100000_create_password_resets_table',1),
-(47,'2019_08_19_000000_create_failed_jobs_table',1),
-(48,'2019_12_14_000001_create_personal_access_tokens_table',1),
-(49,'2022_06_23_143715_create_registrations_table',1);
+(95,'2014_10_12_000000_create_users_table',1),
+(96,'2014_10_12_100000_create_password_resets_table',1),
+(97,'2019_08_19_000000_create_failed_jobs_table',1),
+(98,'2019_12_14_000001_create_personal_access_tokens_table',1),
+(99,'2022_06_23_143715_create_registrations_table',1);
 
 /*Table structure for table `password_resets` */
 
@@ -114,14 +114,15 @@ CREATE TABLE `registrations` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `registrations` */
 
 insert  into `registrations`(`id`,`room_no`,`room_type`,`arrival`,`departure`,`room_rate`,`last_name`,`first_name`,`source`,`address`,`place_date_birth`,`passport_id_number`,`nationality`,`telp_no_handphone`,`city`,`email`,`remark`,`signature_path`,`created_at`,`updated_at`) values 
-(1,'0010','GSU / 1','2019-02-12','2019-04-12','500000','Ragland','Ronna Nichole','WALK IN GUEST','44000 Donlorenzo Drive, Unit 10Los Angeles,','California, U.S.A 31/12/1981','472309233','USA','081654321354','Los Angeles','liasldias@hotmail.com','','1656006055.PNG','2022-06-23 17:41:55','2022-06-23 17:41:55'),
-(2,'0011','GSU / 1','2019-02-12','2019-04-12','500000','Ragland','Ronna Nichole','WALK IN GUEST','44000 Donlorenzo Drive, Unit 10Los Angeles,','California, U.S.A 31/12/1981','472309233','USA','081654321354','Los Angeles','liasldias@hotmail.com','','1656006055.PNG','2022-06-23 17:41:55','2022-06-23 17:41:55'),
-(3,'0012','GSU / 1','2019-02-12','2019-04-12','500000','Ragland','Ronna Nichole','WALK IN GUEST','44000 Donlorenzo Drive, Unit 10Los Angeles,','California, U.S.A 31/12/1981','472309233','USA','081654321354','Los Angeles','liasldias@hotmail.com','','1656006055.PNG','2022-06-23 17:41:55','2022-06-23 17:41:55');
+(1,'0010','DUMMY / 1','2019-02-12','2019-04-12','500000','Dummy','Ronna Nichole','WALK IN GUEST','44000 Donlorenzo Drive, Unit 10Los Angeles,','California, U.S.A 31/12/1981','472309233','USA','081654321354','Los Angeles','liasldias@hotmail.com','','1656006055.PNG','2022-07-01 11:23:51','2022-07-01 11:23:51'),
+(2,'0011','DUMMY / 1','2019-02-12','2019-04-12','500000','Dummy','Ronna Nichole','WALK IN GUEST','44000 Donlorenzo Drive, Unit 10Los Angeles,','California, U.S.A 31/12/1981','472309233','USA','081654321354','Los Angeles','liasldias@hotmail.com','','1656006055.PNG','2022-07-01 11:23:51','2022-07-01 11:23:51'),
+(3,'0012','DUMMY / 1','2019-02-12','2019-04-12','500000','Dummy','Ronna Nichole','WALK IN GUEST','44000 Donlorenzo Drive, Unit 10Los Angeles,','California, U.S.A 31/12/1981','472309233','USA','081654321354','Los Angeles','liasldias@hotmail.com','','1656006055.PNG','2022-07-01 11:23:51','2022-07-01 11:23:51'),
+(4,'0013','DUMMY / 1','2019-02-12','2019-04-12','500000','Dummy','Ronna Nichole','WALK IN GUEST','44000 Donlorenzo Drive, Unit 10Los Angeles,','California, U.S.A 31/12/1981','472309233','USA','081654321354','Los Angeles','liasldias@hotmail.com','','1656006055.PNG','2022-07-01 11:23:51','2022-07-01 11:23:51');
 
 /*Table structure for table `users` */
 
@@ -133,14 +134,19 @@ CREATE TABLE `users` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `is_super_admin` tinyint(1) DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `users` */
+
+insert  into `users`(`id`,`name`,`email`,`email_verified_at`,`password`,`is_super_admin`,`remember_token`,`created_at`,`updated_at`) values 
+(1,'Super Admin','superadmin@gmail.com','2022-07-01 11:23:51','$2y$10$jtbjg04xYY4AtwtjEXKtWezQQyfEDr9Sr6ccNIbP/o1gv7gYUzyBa',1,NULL,'2022-07-01 11:23:51','2022-07-01 11:23:51'),
+(2,'Dummy Admin','admin@gmail.com','2022-07-01 11:23:51','$2y$10$KiYMN0Hw4Cg/0UkFKA5oe.dvnKFhR9dNzKlVV5zjjRc873K3hpcLC',0,NULL,'2022-07-01 11:23:51','2022-07-01 11:23:51');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
