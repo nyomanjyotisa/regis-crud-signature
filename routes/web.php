@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\AdminController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +16,18 @@ use App\Http\Controllers\RegistrationController;
 |
 */
 
-Route::get('/', [RegistrationController::class, 'index']);
-Route::get('/new', [RegistrationController::class, 'create']);
-Route::post('/new', [RegistrationController::class, 'store']);
-Route::get('/{id}', [RegistrationController::class, 'show']);
-Route::get('/{id}/edit', [RegistrationController::class, 'edit']);
-Route::post('/{id}/edit', [RegistrationController::class, 'update']);
-Route::get('/{id}/delete', [RegistrationController::class, 'destroy']);
+Route::get('/home', [RegistrationController::class, 'index'])->name('home')->middleware('auth');
+Route::redirect('/', '/login');
+Route::get('/new', [RegistrationController::class, 'create'])->middleware('auth');
+Route::post('/new', [RegistrationController::class, 'store'])->middleware('auth');
+Route::get('/{id}/show', [RegistrationController::class, 'show'])->middleware('auth');
+Route::get('/{id}/edit', [RegistrationController::class, 'edit'])->middleware('auth');
+Route::post('/{id}/edit', [RegistrationController::class, 'update'])->middleware('auth');
+Route::get('/{id}/delete', [RegistrationController::class, 'destroy'])->middleware('auth');
+
+Route::resource('admin', AdminController::class)->middleware('auth')->middleware('is_super_admin');
+Route::post('/admin/store', [AdminController::class, 'store'])->middleware('auth')->middleware('is_super_admin');
+Route::post('/admin/{id}/edit', [AdminController::class, 'update'])->middleware('auth')->middleware('is_super_admin');
+Route::get('/admin/{id}/delete', [AdminController::class, 'destroy'])->middleware('auth')->middleware('is_super_admin');
+
+Auth::routes(['register' => false]);

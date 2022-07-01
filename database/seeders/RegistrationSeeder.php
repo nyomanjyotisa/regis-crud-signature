@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Registration;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
@@ -16,6 +17,17 @@ class RegistrationSeeder extends Seeder
      */
     public function run()
     {
+        $dateNow = now();
+
+        //admin
+         $admin = User::create([
+            'name' => 'Super Admin',
+            'email' => 'superadmin@gmail.com',
+            'email_verified_at' => $dateNow,
+            'password' => Hash::make('1wd8o;'),
+            'is_super_admin' => true,
+        ]);
+
         for ($x = 0; $x <= 30; $x++) {
             Registration::create([
                 'room_no' => "001".$x,

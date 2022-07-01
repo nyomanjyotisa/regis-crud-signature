@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('title', 'Registration CRUD')
+@section('title', 'Admin Data')
 
 @section('sidebar')
 @include('layout.sidebar')
@@ -21,9 +21,9 @@
         <div class="col-lg-12 col-md-12 col-12 col-sm-12">
               <div class="card">
                 <div class="card-header">
-                  <h4>Registration Data List</h4>
+                  <h4>Admin Data List</h4>
                   <div class="card-header-action">
-                    <a href="/new" class="btn btn-primary">New Registration</a>
+                    <a href="/admin/create" class="btn btn-primary">New Admin</a>
                   </div>
                 </div>
                 <div class="card-body p-0">
@@ -31,10 +31,8 @@
                     <table class="table table-striped mb-0">
                       <thead>
                         <tr>
-                          <th>Room No</th>
                           <th>Name</th>
-                          <th>Arrival</th>
-                          <th>Departure</th>
+                          <th>Email</th>
                           <th>Action</th>
                         </tr>
                       </thead>
@@ -42,25 +40,16 @@
                         @foreach ($datas as $data)
                         <tr>
                           <td>
-                            {{$data->room_no}}
+                            {{$data->name}}
                           </td>
                           <td>
-                            {{$data->last_name}}
+                            {{$data->email}}
                           </td>
                           <td>
-                            {{date("F jS, Y", strtotime($data->arrival))}}
-                          </td>
-                          <td>
-                            {{date("F jS, Y", strtotime($data->departure))}}
-                          </td>
-                          <td>
-                            <a href="/{{$data->id}}/show" class="btn btn-info btn-action">
-                                    <i class="fas fa-eye"></i>
-                            </a>
-                            <a href="/{{$data->id}}/edit" class="btn btn-warning btn-action">
+                            <a href="/admin/{{$data->id}}/edit" class="btn btn-warning btn-action">
                                     <i class="fas fa-pencil-alt"></i>
                             </a>
-                            <a href="/{{$data->id}}/delete" class="btn btn-danger btn-action" onclick="return confirm ('Delete Registration Data?')">
+                            <a href="/admin/{{$data->id}}/delete" class="btn btn-danger btn-action" onclick="return confirm ('Delete Admin Data?')">
                                     <i class="fas fa-trash"></i>
                             </a>
                           </td>

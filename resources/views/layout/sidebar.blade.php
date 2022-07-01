@@ -18,4 +18,10 @@
                 <span>New Registration</span>
             </a>
         </li>
+        <li class="">
+            <a href="/admin" class="nav-link">
+                <i class="fas fa-user"></i>
+                <span>Admins</span>
+            </a>
+        </li>
 </aside>
