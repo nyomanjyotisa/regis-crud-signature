@@ -40,106 +40,99 @@
                     <div class="form-group row mb-4 hide-sign">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Room No*</label>
                       <div class="col-sm-12 col-md-7">
-                        <input type="text" name="room_no" class="form-control" value="{{ old('room_no') }}">
+                        <input type="text" name="room_no" id="room_no" class="form-control" value="{{ old('room_no') }}" onkeyup='saveValue(this);'>
                       </div>
                     </div>
                     <div class="form-group row mb-4 hide-sign">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Room Type*</label>
                       <div class="col-sm-12 col-md-7">
-                        <input type="text" name="room_type" class="form-control" value="{{ old('room_type') }}">
+                        <input type="text" name="room_type" id="room_type" class="form-control" value="{{ old('room_type') }}" onkeyup='saveValue(this);'>
                       </div>
                     </div>
                     <div class="form-group row mb-4 hide-sign">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Arrival*</label>
                       <div class="col-sm-12 col-md-7">
-                        <input type="date" name="arrival" class="form-control" value="{{ old('arrival') }}">
+                        <input type="date" name="arrival" id="arrival" class="form-control" value="{{ old('arrival') }}" onchange='saveValue(this);'>
                       </div>
                     </div>
                     <div class="form-group row mb-4 hide-sign">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Departure*</label>
                       <div class="col-sm-12 col-md-7">
-                        <input type="date" name="departure" class="form-control" value="{{ old('departure') }}">
+                        <input type="date" name="departure" id="departure" class="form-control" value="{{ old('departure') }}" onchange='saveValue(this);'>
                       </div>
                     </div>
                     <div class="form-group row mb-4 hide-sign">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Room Rate*</label>
                       <div class="col-sm-12 col-md-7">
-                        <input type="text" name="room_rate" class="form-control" value="{{ old('room_rate') }}">
+                        <input type="text" name="room_rate" id="room_rate" class="form-control" value="{{ old('room_rate') }}" onkeyup='saveValue(this);'>
                       </div>
                     </div>
                     <div class="form-group row mb-4 hide-sign">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Last Name*</label>
                       <div class="col-sm-12 col-md-7">
-                        <input type="text" name="last_name" class="form-control" value="{{ old('last_name') }}">
+                        <input type="text" name="last_name" id="last_name" class="form-control" value="{{ old('last_name') }}" onkeyup='saveValue(this);'>
                       </div>
                     </div>
                     <div class="form-group row mb-4 hide-sign">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">First Name*</label>
                       <div class="col-sm-12 col-md-7">
-                        <input type="text" name="first_name" class="form-control" value="{{ old('first_name') }}">
+                        <input type="text" name="first_name" id="first_name" class="form-control" value="{{ old('first_name') }}" onkeyup='saveValue(this);'>
                       </div>
                     </div>
                     <div class="form-group row mb-4 hide-sign">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Source*</label>
                       <div class="col-sm-12 col-md-7">
-                        <input type="text" name="source" class="form-control" value="{{ old('source') }}">
+                        <input type="text" name="source" id="source" class="form-control" value="{{ old('source') }}" onkeyup='saveValue(this);'>
                       </div>
                     </div>
                     <div class="form-group row mb-4 hide-sign">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Address*</label>
                       <div class="col-sm-12 col-md-7">
-                        <input type="text" name="address" class="form-control" value="{{ old('address') }}">
+                        <input type="text" name="address" id="address" class="form-control" value="{{ old('address') }}" onkeyup='saveValue(this);'>
                       </div>
                     </div>
                     <div class="form-group row mb-4 hide-sign">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Place and Date of Birth*</label>
                       <div class="col-sm-12 col-md-7">
-                        <input type="text" name="place_date_birth" class="form-control" value="{{ old('place_date_birth') }}">
+                        <input type="text" name="place_date_birth" id="place_date_birth" class="form-control" value="{{ old('place_date_birth') }}" onkeyup='saveValue(this);'>
                       </div>
                     </div>
                     <div class="form-group row mb-4 hide-sign">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Passport / ID Number*</label>
                       <div class="col-sm-12 col-md-7">
-                        <input type="text" name="passport_id_number" class="form-control" value="{{ old('passport_id_number') }}">
+                        <input type="text" name="passport_id_number" id="passport_id_number" class="form-control" value="{{ old('passport_id_number') }}" onkeyup='saveValue(this);'>
                       </div>
                     </div>
                     <div class="form-group row mb-4 hide-sign">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nationality*</label>
                       <div class="col-sm-12 col-md-7">
-                        <input type="text" name="nationality" class="form-control" value="{{ old('nationality') }}">
+                        <input type="text" name="nationality" id="nationality" class="form-control" value="{{ old('nationality') }}" onkeyup='saveValue(this);'>
                       </div>
                     </div>
                     <div class="form-group row mb-4 hide-sign">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Telp No/Handphone</label>
                       <div class="col-sm-12 col-md-7">
-                        <input type="text" name="telp_no_handphone" class="form-control" value="{{ old('telp_no_handphone') }}">
+                        <input type="text" name="telp_no_handphone" id="telp_no_handphone" class="form-control" value="{{ old('telp_no_handphone') }}" onkeyup='saveValue(this);'>
                       </div>
                     </div>
                     <div class="form-group row mb-4 hide-sign">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">City*</label>
                       <div class="col-sm-12 col-md-7">
-                        <input type="text" name="city" class="form-control" value="{{ old('city') }}">
+                        <input type="text" name="city" id="city" class="form-control" value="{{ old('city') }}" onkeyup='saveValue(this);'>
                       </div>
                     </div>
                     <div class="form-group row mb-4 hide-sign">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Email*</label>
                       <div class="col-sm-12 col-md-7">
-                        <input type="text" name="email" class="form-control" value="{{ old('email') }}">
+                        <input type="text" name="email" id="email" class="form-control" value="{{ old('email') }}" onkeyup='saveValue(this);'>
                       </div>
                     </div>
-                    <div class="form-group row mb-4" id="signature-det">
+                    <div id="create-sign" class="form-group row mb-4 hide-sign">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Signature*</label>
                       <div class="col-sm-12 col-md-7">
-                        <div id="sig" style="height: 400px;" ></div>
-                        <a id="clear" class="mt-3 btn btn-danger btn-sm active">Clear Signature</a>
-                        <a id="submit-sign" class="mt-3 btn btn-primary btn-sm active">Submit Signature</a>
+                        <a href="/sign" id="show" class="mt-3 btn btn-success btn-sm active">Draw Signature</a><br>
+                        <img id="signPreview" src="" alt="" width="500" height="333">
                         <textarea id="signature64" name="signature_path" style="display: none"></textarea>
-                      </div>
-                    </div>
-                    <div class="form-group row mb-4 hide-sign">
-                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Signature*</label>
-                      <div class="col-sm-12 col-md-7">
-                        <a id="show" class="mt-3 btn btn-success btn-sm active">Create Signature</a>
                       </div>
                     </div>
                     <div class="form-group row mb-4 hide-sign">
@@ -156,26 +149,57 @@
           </div>
         </section>
       </div>
-
-<script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+      
 <script type="text/javascript">
-    $("#signature-det").fadeOut();
 
-    var sig = $('#sig').signature({syncField: '#signature64', syncFormat: 'PNG'});
-    $('#clear').click(function(e) {
-      e.preventDefault();
-      sig.signature('clear');
-      $("#signature64").val('');
+    if(sessionStorage.length != 0){
+      $("#show").text("Update Signature");
+      $('#signPreview').attr("src", sessionStorage.signature);
+      $('#signPreview').show();
+      $("#signature64").val(sessionStorage.signature);
+    }else{
+      $('#signPreview').hide();
+    }
+
+    window.addEventListener( "pageshow", function ( event ) {
+      var historyTraversal = event.persisted || 
+                            ( typeof window.performance != "undefined" && 
+                                  window.performance.navigation.type === 2 );
+      if ( historyTraversal ) {
+        // Handle page restore.
+        window.location.reload();
+      }
     });
-    $('#show').click(function(e) {
-      $(".hide-sign").hide();
-      $("#signature-det").show();
-      $("body").css("overflow", "hidden");
-    });
-    $('#submit-sign').click(function(e) {
-      $(".hide-sign").show();
-      $("#signature-det").fadeOut();
-      $("body").css("overflow", "visible");
-    });
+
+    document.getElementById("room_no").value = getSavedValue("room_no");
+    document.getElementById("room_type").value = getSavedValue("room_type");
+    document.getElementById("arrival").value = getSavedValue("arrival");
+    document.getElementById("departure").value = getSavedValue("departure");
+    document.getElementById("last_name").value = getSavedValue("last_name");
+    document.getElementById("first_name").value = getSavedValue("first_name");
+    document.getElementById("room_rate").value = getSavedValue("room_rate");
+    document.getElementById("source").value = getSavedValue("source");
+    document.getElementById("address").value = getSavedValue("address");
+    document.getElementById("place_date_birth").value = getSavedValue("place_date_birth");
+    document.getElementById("passport_id_number").value = getSavedValue("passport_id_number");
+    document.getElementById("nationality").value = getSavedValue("nationality");
+    document.getElementById("city").value = getSavedValue("city");
+    document.getElementById("telp_no_handphone").value = getSavedValue("telp_no_handphone");
+    document.getElementById("email").value = getSavedValue("email");
+
+    //Save the value function - save it to localStorage as (ID, VALUE)
+    function saveValue(e){
+        var id = e.id;  // get the sender's id to save it . 
+        var val = e.value; // get the value. 
+        localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+    }
+
+    //get the saved value function - return the value of "v" from localStorage. 
+    function getSavedValue  (v){
+        if (!localStorage.getItem(v)) {
+            return "";// You can change this to your defualt value. 
+        }
+        return localStorage.getItem(v);
+    }
 </script>
 @endsection

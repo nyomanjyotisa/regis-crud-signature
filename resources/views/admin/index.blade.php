@@ -37,7 +37,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach ($datas as $data)
+                        @forelse ($datas as $data)
                         <tr>
                           <td>
                             {{$data->name}}
@@ -54,7 +54,11 @@
                             </a>
                           </td>
                         </tr>
-                        @endforeach
+                        @empty
+                        <tr>
+                          <td colspan="3" style="text-align:center">No Data</td>
+                        </tr>
+                        @endforelse
                       </tbody>
                     </table>
                   </div>

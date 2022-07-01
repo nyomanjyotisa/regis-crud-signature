@@ -29,5 +29,6 @@ Route::resource('admin', AdminController::class)->middleware('auth')->middleware
 Route::post('/admin/store', [AdminController::class, 'store'])->middleware('auth')->middleware('is_super_admin');
 Route::post('/admin/{id}/edit', [AdminController::class, 'update'])->middleware('auth')->middleware('is_super_admin');
 Route::get('/admin/{id}/delete', [AdminController::class, 'destroy'])->middleware('auth')->middleware('is_super_admin');
+Route::view('/sign', 'sign');
 
 Auth::routes(['register' => false]);

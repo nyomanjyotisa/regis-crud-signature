@@ -18,10 +18,12 @@
                 <span>New Registration</span>
             </a>
         </li>
+        @if(auth()->user()->is_super_admin == 1)
         <li class="">
             <a href="/admin" class="nav-link">
                 <i class="fas fa-user"></i>
                 <span>Admins</span>
             </a>
         </li>
+        @endif
 </aside>

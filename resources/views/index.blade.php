@@ -39,7 +39,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach ($datas as $data)
+                        @forelse ($datas as $data)
                         <tr>
                           <td>
                             {{$data->room_no}}
@@ -65,7 +65,11 @@
                             </a>
                           </td>
                         </tr>
-                        @endforeach
+                        @empty
+                        <tr>
+                          <td colspan="5" style="text-align:center">No Data</td>
+                        </tr>
+                        @endforelse
                       </tbody>
                     </table>
                   </div>
@@ -75,4 +79,8 @@
         </div>
     </section>
 </div>
+<script>
+  localStorage.clear();
+  sessionStorage.clear();
+</script>
 @endsection
