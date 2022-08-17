@@ -113,6 +113,20 @@
                       </div>
                     </div>
                     <div class="form-group row mb-4">
+                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Remark</label>
+                      <div class="col-sm-12 col-md-7">
+                        <input type="text" name="remark" class="form-control" value="{{ $data->remark }}" disabled>
+                      </div>
+                    </div>
+                    <div class="form-group row mb-4 hide-sign">
+                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                      <div class="col-sm-12 col-md-7">
+                        <p>The Hotel will not Accept any liability for any valuables left by guest in the room. The hotel has provide safety deposit box with free of charge in each room, The hotel will not be held responsible for any accident or injury to guest. Regardless of the billing instruction, I agree to be held personally liable in the event that the indicated person, company and ( or ) association fails to pay any part or the full amount of charges incurred
+                        My Signature is authorization for The Udaya Resort and Spa to use the credit card imprinted for payment of this room account
+                        </p>   
+                      </div>
+                    </div>
+                    <div class="form-group row mb-4">
                       <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Signature*</label>
                       <div class="col-sm-12 col-md-7">
                         <img src="/signatures/{{$data->signature_path}}" alt="" width="500" height="333">
