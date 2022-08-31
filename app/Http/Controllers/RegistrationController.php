@@ -65,8 +65,8 @@ class RegistrationController extends Controller
         $data['signature_path'] = str_replace('data:image/png;base64,', '', $data['signature_path']);
         $data['signature_path'] = str_replace(' ', '+', $data['signature_path']);
         $file = base64_decode($data['signature_path']);
-        $safeName = time().'.'.'PNG';
-        file_put_contents(public_path().'/signatures/'.$safeName, $file);
+        $safeName = time() . '.' . 'PNG';
+        file_put_contents(public_path() . '/signatures/' . $safeName, $file);
 
         $data['signature_path'] = $safeName;
 
@@ -75,7 +75,7 @@ class RegistrationController extends Controller
         } else {
             Registration::create($data);
 
-            return redirect ('/')->with(['success' => 'Create Registration Success']);
+            return redirect('/')->with(['success' => 'Create Registration Success']);
         }
     }
 
@@ -137,8 +137,8 @@ class RegistrationController extends Controller
         $data['signature_path'] = str_replace('data:image/png;base64,', '', $data['signature_path']);
         $data['signature_path'] = str_replace(' ', '+', $data['signature_path']);
         $file = base64_decode($data['signature_path']);
-        $safeName = time().'.'.'PNG';
-        file_put_contents(public_path().'/signatures/'.$safeName, $file);
+        $safeName = time() . '.' . 'PNG';
+        file_put_contents(public_path() . '/signatures/' . $safeName, $file);
 
         $data['signature_path'] = $safeName;
 
@@ -147,7 +147,7 @@ class RegistrationController extends Controller
         } else {
             $registrationData->update($data);
 
-            return redirect ('/')->with(['success' => 'Update Registration Data Success']);
+            return redirect('/')->with(['success' => 'Update Registration Data Success']);
         }
     }
 
@@ -160,7 +160,6 @@ class RegistrationController extends Controller
     public function destroy($id)
     {
         Registration::where('id', $id)->delete();
-        return redirect ('/')->with(['success' => 'Delete Registration Data Success']);
-
+        return redirect('/')->with(['success' => 'Delete Registration Data Success']);
     }
 }
